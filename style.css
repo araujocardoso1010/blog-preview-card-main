@@ -1,0 +1,144 @@
+@font-face {
+  font-family: Figtree;
+  src: url('./assets/fonts/Figtree-VariableFont_wght.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Figtree-Semibold;
+  src: url('./assets/fonts/static/Figtree-SemiBold.ttf');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: Figtree-Extrabold;
+  src: url('./assets/fonts/static/Figtree-ExtraBold.ttf');
+  font-weight: 800;
+}
+
+:root {
+  --clr-primary: hsl(47, 88%, 63%);
+  --clr-bg: hsl(0, 0%, 100%);
+  --clr-paragraph: hsl(0, 0%, 50%);
+  --clr-text: hsl(0, 0%, 7%);
+
+  --ft-normal: 'Figtree';
+  --ft-semibold: 'Figtree-Semibold';
+  --ft-extrabold: 'Figtree-Extrabold'
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--clr-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 16px;
+  color: var(--clr-text);
+  font-family: var(--ft-normal);
+}
+
+.card {
+  width: 384px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  background-color: var(--clr-bg);
+  border-radius: 20px;
+  border: 1px solid var(--clr-text);
+  box-shadow: 8px 8px var(--clr-text);
+  transition: .2s;
+}
+
+.card--expand {
+  box-shadow: 16px 16px;
+}
+
+.blogimage {
+  width: 336px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.content__category {
+  background-color: var(--clr-primary);
+  width: max-content;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-family: var(--ft-extrabold);
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.content__publishdate {
+  line-height: 150%;
+  font-family: var(--ft-semibold);
+  font-size: 14px;
+}
+
+.content__title {
+  font-family: var(--ft-extrabold);
+  line-height: 150%;
+}
+
+.content__title:hover {
+  color: var(--clr-primary);
+  cursor: pointer;
+}
+
+.content__description {
+  color: var(--clr-paragraph);
+  line-height: 150%;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author__picture {
+  width: 32px;
+}
+
+.author__name {
+  font-family: var(--ft-extrabold);
+  font-size: 14px;
+}
+
+@media (max-width: 420px)   {
+  .card {
+    width: 327px;
+  }
+
+  .blogimage {
+    width: 279px;
+  }
+
+  .content__category,
+  .content__publishdate {
+    font-size: 12px;
+  }
+
+  .content__title {
+    font-size: 20px;
+  }
+
+  .content__description {
+    font-size: 14px;
+  }
+}
